@@ -1,0 +1,24 @@
+<h3>Switch</h3>
+
+<div class="colors">
+    <div *ngFor="let color of displayColors; let i = index">
+        <div [ngSwitch]="color">
+            <app-colors *ngSwitchCase="'plum'" [index]="i"></app-colors>
+            <app-thistle *ngSwitchCase="'thistle'" [index]="i"></app-thistle>
+            <app-floral *ngSwitchCase="'floral'" [index]="i"></app-floral>
+            <app-lollipop *ngSwitchCase="'lollipop'" [index]="i"></app-lollipop>
+            <app-teal *ngSwitchCase="'teal'" [index]="i"></app-teal>
+            <app-carnation *ngSwitchCase="'carnation'" [index]="i"></app-carnation>
+            <app-bubblegum *ngSwitchCase="'bubblegum'" [index]="i"></app-bubblegum>
+            <app-ruby *ngSwitchCase="'ruby'" [index]="i"></app-ruby>
+            <app-lawn *ngSwitchCase="'lawn'" [index]="i"></app-lawn>
+            <app-honeydew *ngSwitchCase="'honeydew'" [index]="i"></app-honeydew>
+            <app-mindaro *ngSwitchCase="'mindaro'" [index]="i"></app-mindaro>
+            <app-pistachio *ngSwitchCase="'pistachio'" [index]="i"></app-pistachio>
+            <app-yellow *ngSwitchCase="'yellow'" [index]="i"></app-yellow>
+            <app-cream *ngSwitchCase="'cream'" [index]="i"></app-cream>
+            <app-banana *ngSwitchCase="'banana'" [index]="i"></app-banana>
+            <app-trombone *ngSwitchCase="'trombone'" [index]="i"></app-trombone>
+        </div>
+    </div>
+</div>
