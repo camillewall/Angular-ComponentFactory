@@ -1,10 +1,5 @@
 import { Component, OnInit, AfterViewInit } from '@angular/core';
-import { MyColorsService } from '../my-colors.service';
-import {
-    NgPerfume,
-    PerfumeModule,
-    PerfumeAfterViewInit
-} from 'perfume.js/angular';
+import { PerfumeAfterViewInit} from 'perfume.js/angular';
 
 @Component({
     selector: 'app-color-factory',
@@ -14,13 +9,7 @@ import {
 @PerfumeAfterViewInit('ColorFactoryComponent')
 export class ColorFactoryComponent implements OnInit, AfterViewInit {
 
-    displayColors: string[];
-
-    constructor(private colors: MyColorsService,
-        // public perfume: NgPerfume
-    ) {
-        this.displayColors = this.colors.displayColors;
-    }
+    constructor() { }
 
     ngOnInit() {
     }

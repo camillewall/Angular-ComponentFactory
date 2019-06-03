@@ -44,24 +44,6 @@ export const PerfumeConfig = {
         PerfumeModule.forRoot(PerfumeConfig)
     ],
     providers: [],
-    entryComponents: [
-        ColorsComponent,
-        ThistleComponent,
-        LollipopComponent,
-        FloralComponent,
-        FuchsiaComponent,
-        LawnComponent,
-        RubyComponent,
-        BubblegumComponent,
-        CarnationComponent,
-        HoneydewComponent,
-        MindaroComponent,
-        PistachioComponent,
-        YellowComponent,
-        CreamComponent,
-        BananaComponent,
-        TromboneComponent
-    ],
     bootstrap: [AppComponent]
 })
 export class AppModule { }
