@@ -64,17 +64,11 @@ export class ColorFactoryWrapperComponent implements OnChanges, OnDestroy, OnIni
             }
         }
 
-        // console.log('index:',this.index);
-
+        // make a factory with the correct component type
         let factory = this.componentFactoryResolver.resolveComponentFactory(componentType);
-        // const componentRef = factory.create(this.injector);
-        // this.target.clear();
-        // this.target.insert(componentRef.hostView);
-
+        // create the component and assign to target div element
         this.cmpRef = this.target.createComponent(factory)
         // to access the created instance use
         this.cmpRef.instance.index = this.index;
-        // this.compRef.instance.someProperty = 'someValue';
-        // this.compRef.instance.someOutput.subscribe(val => doSomething());
     }
 }

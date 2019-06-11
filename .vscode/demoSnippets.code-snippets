@@ -1,0 +1,153 @@
+{
+	"Add entryComponents": {
+		"scope": "javascript,typescript",
+		"prefix": "addEntry",
+		"body": [
+			"entryComponents: [",
+			"    ColorsComponent,",
+			"    ThistleComponent,",
+			"    LollipopComponent,",
+			"    FloralComponent,",
+			"    FuchsiaComponent,",
+			"    LawnComponent,",
+			"    RubyComponent,",
+			"    BubblegumComponent,",
+			"    CarnationComponent,",
+			"    HoneydewComponent,",
+			"    MindaroComponent,",
+			"    PistachioComponent,",
+			"    YellowComponent,",
+			"    CreamComponent,",
+			"    BananaComponent,",
+			"    TromboneComponent",
+			"],"
+		],
+		"description": "Add entryComponents"
+	},
+	"factory html": {
+		"prefix": "facthtml",
+		"body": [
+			"<h3>Factory</h3>",
+			"<div class=\"colors\">",
+			"    <div *ngFor=\"let color of displayColors; let i = index\">",
+			"        <!-- {{color}} -->",
+			"        <app-color-factory-wrapper [type]=\"color\" [index]=\"i\">",
+			"        </app-color-factory-wrapper>",
+			"    </div>",
+			"</div>"
+		],
+		"description": "factory html"
+	},
+	"color service": {
+		"prefix": "colorService",
+		"body": "private colors: MyColorsService,",
+		"description": "Add color service"
+	},
+	"resolver service": {
+		"prefix": "resolverService",
+		"body": "private componentFactoryResolver: ComponentFactoryResolver",
+		"description": "componentFactoryResolver service"
+	},
+	"display color array": {
+		"prefix": "colorArray",
+		"body": "displayColors: string[];",
+		"description": "display color array"
+	},
+	"wrapper target div": {
+		"prefix": "wrapperDiv",
+		"body": "<div #target></div>",
+		"description": "wrapper target div"
+	},
+	"wrapper variables": {
+		"prefix": "wrapperVars",
+		"body": [
+			"@ViewChild('target', { read: ViewContainerRef }) target: ViewContainerRef;",
+			"@Input() type: string;",
+			"@Input() index: number;",
+			"cmpRef: ComponentRef<ColorBox>;",
+			"private isViewInitialized: boolean = false;"
+		],
+		"description": "wrapper variables"
+	},
+	"wrapper onInit": {
+		"prefix": "wrapperInit",
+		"body": [
+			"this.isViewInitialized = true;",
+			"this.updateComponent();"
+		],
+		"description": "wrapper onInit"
+	},
+	"wrapper update component": {
+		"prefix": "wrapperUpdate",
+		"body": [
+			"updateComponent() {",
+			"        if (!this.isViewInitialized) {",
+			"            return;",
+			"        }",
+			"        if (this.cmpRef) {",
+			"            // when the `type` input changes we destroy a previously ",
+			"            // created component before creating the new one",
+			"            this.cmpRef.destroy();",
+			"        }",
+			"    ",
+			"",
+			"}"
+		],
+		"description": "wrapper update component"
+	},
+	"wrapper update switch": {
+		"prefix": "wrapperSwitch",
+		"body": [
+			"let componentType: Type<ColorBox> = ColorsComponent;",
+			"        switch (this.type) {",
+			"            case 'thistle': { componentType = ThistleComponent; break; }",
+			"            case 'lollipop': { componentType = LollipopComponent; break; }",
+			"            case 'floral': { componentType = FloralComponent; break; }",
+			"            case 'teal': { componentType = FuchsiaComponent; break; }",
+			"            case 'carnation': { componentType = CarnationComponent; break; }",
+			"            case 'bubblegum': { componentType = BubblegumComponent; break; }",
+			"            case 'ruby': { componentType = RubyComponent; break; }",
+			"            case 'lawn': { componentType = LawnComponent; break; }",
+			"            case 'honeydew': { componentType = HoneydewComponent; break; }",
+			"            case 'mindaro': { componentType = MindaroComponent; break; }",
+			"            case 'pistachio': { componentType = PistachioComponent; break; }",
+			"            case 'yellow': { componentType = YellowComponent; break; }",
+			"            case 'cream': { componentType = CreamComponent; break; }",
+			"            case 'banana': { componentType = BananaComponent; break; }",
+			"            case 'trombone': { componentType = TromboneComponent; break; }",
+			"            default: {",
+			"                componentType = ColorsComponent;",
+			"                break;",
+			"            }",
+			"        }"
+		],
+		"description": "wrapper update switch"
+	},
+	"wrapper update factory": {
+		"prefix": "wrapperFactory",
+		"body": [
+			"// make a factory with the correct component type",
+			"let factory = this.componentFactoryResolver.resolveComponentFactory(componentType);",
+			"// create the component and assign to target div element",
+			"this.cmpRef = this.target.createComponent(factory)",
+			"// to access the created instance use",
+			"this.cmpRef.instance.index = this.index;"
+		],
+		"description": "wrapper update factory"
+	},
+	"wrapper on something": {
+		"prefix": "wrapperOn",
+		"body": [
+			"ngOnChanges() {",
+			"    this.updateComponent();",
+			"}",
+			"",
+			"ngOnDestroy() {",
+			"    if (this.cmpRef) {",
+			"        this.cmpRef.destroy();",
+			"    }",
+			"}"
+		],
+		"description": "wrapper on something"
+	}
+}
