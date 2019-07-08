@@ -10,21 +10,9 @@ export class AppComponent {
 
   availableColors: string[] = [
     'plum',
-    'thistle',
-    'floral',
-    'lollipop',
-    'teal',
+    'mauve',
     'carnation',
-    'bubblegum',
-    'ruby',
-    'lawn',
-    'honeydew',
-    'mindaro',
-    'pistachio',
-    'yellow',
-    'cream',
-    'banana',
-    'trombone'
+    'olympic'
   ];
 
   // displayColors: string[] = [];

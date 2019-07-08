@@ -1,26 +1,7 @@
-$color-primary-0: #8B13FF;	// plum // Main Primary color */
-$color-primary-1: #D5AAFF;  // thistle
-$color-primary-2: #BE7BFF;  // floral
-$color-primary-3: #4A0092;  // lollipop
-$color-primary-4: #390071;
-
-$color-secondary-1-0: #FF00C7;	// fuchsia // Main Secondary color (1) */
-$color-secondary-1-1: #FFA4EB;  // carnation
-$color-secondary-1-2: #FF70DF;  // bubble gum
-$color-secondary-1-3: #9E007B;  // ruby
-$color-secondary-1-4: #79005F;
-
-$color-secondary-2-0: #C3FF00;	// lawn  // Main Secondary color (2) */
-$color-secondary-2-1: #EAFFA4;  // honeydew
-$color-secondary-2-2: #DDFF70;  // mindaro
-$color-secondary-2-3: #9ECF00;  // pistachio
-$color-secondary-2-4: #7A9F00;
-
-$color-complement-0: #FFF100;	// yellow // Main Complement color */
-$color-complement-1: #FFFAA4;   // cream
-$color-complement-2: #FFF770;   // banana
-$color-complement-3: #D9CD00;   // trombone
-$color-complement-4: #A79E00;
+$color-primary-0: #4D1979;	// plum // Main Primary color */
+$color-primary-1: #755A88;  // mauve
+$color-primary-2: #FFE9FF;  // carnation
+$color-primary-3: #61BAAD;  // olympic
 
 $lighten-percent: 40%;
 $darken-percent: 40%;
@@ -28,91 +9,30 @@ $darken-percent: 40%;
 div {
     width: 70px;
     height: 70px;
-    border-radius: 4px;
     display: flex;
     align-items: center;
     text-align: center;
     justify-content: center;
 
-// colors from https://clrs.cc/
+// colors from https://mycolor.space/?hex=%234D1979&sub=1
 
     &.plum{
         background-color: $color-primary-0;
         color: lighten($color-primary-0, $lighten-percent);
     }
 
-    &.thistle{
+    &.mauve{
         background-color: $color-primary-1;
         color: darken($color-primary-1, $darken-percent);
     }
 
-    &.floral{
+    &.carnation{
         background-color: $color-primary-2;
         color: darken($color-primary-2, $darken-percent);
     }
 
-    &.lollipop{
+    &.olympic{
         background-color: $color-primary-3;
-        color: lighten($color-primary-3, $lighten-percent);
-    }
-
-    &.teal{
-        background-color: $color-secondary-1-0;
-        color: lighten($color-secondary-1-0, $lighten-percent);
-    }
-
-    &.carnation{
-        background-color: $color-secondary-1-1;
-        color: lighten($color-secondary-1-1, $lighten-percent);
-    }
-
-    &.bubblegum{
-        background-color: $color-secondary-1-2;
-        color: lighten($color-secondary-1-2, $lighten-percent);
-    }
-
-    &.ruby{
-        background-color: $color-secondary-1-3;
-        color: lighten($color-secondary-1-3, $lighten-percent);
-    }
-
-    &.lawn{
-        background-color: $color-secondary-2-0;
-        color: darken($color-secondary-2-0, $darken-percent);
-    }
-
-    &.honeydew{
-        background-color: $color-secondary-2-1;
-        color: darken($color-secondary-2-1, $darken-percent);
-    }
-
-    &.mindaro{
-        background-color: $color-secondary-2-2;
-        color: darken($color-secondary-2-2, $darken-percent);
-    }
-
-    &.pistachio{
-        background-color: $color-secondary-2-3;
-        color: darken($color-secondary-2-3, $darken-percent);
-    }
-
-    &.yellow{
-        background-color: $color-complement-0;
-        color: darken($color-complement-0, $darken-percent);
-    }
-
-    &.cream{
-        background-color: $color-complement-1;
-        color: darken($color-complement-1, $darken-percent);
-    }
-
-    &.banana{
-        background-color: $color-complement-2;
-        color: darken($color-complement-2, $darken-percent);
-    }
-
-    &.trombone{
-        background-color: $color-complement-3;
-        color: darken($color-complement-3, $darken-percent);
+        color: darken($color-primary-3, $darken-percent);
     }
 }

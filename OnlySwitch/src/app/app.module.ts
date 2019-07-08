@@ -5,7 +5,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { ColorSwitchComponent } from './color-switch/color-switch.component';
 import { ColorFactoryComponent } from './color-factory/color-factory.component';
-import { ColorsComponent, ThistleComponent, FuchsiaComponent, LollipopComponent, LawnComponent, RubyComponent, BubblegumComponent, CarnationComponent, HoneydewComponent, MindaroComponent, PistachioComponent, YellowComponent, CreamComponent, BananaComponent, TromboneComponent, FloralComponent } from './colors/colors.component';
+import { ColorsComponent, MauveComponent, OlympicComponent, CarnationComponent } from './colors/colors.component';
 import { ColorFactoryWrapperComponent } from './color-factory-wrapper/color-factory-wrapper.component';
 import { PerfumeModule } from 'perfume.js/angular';
 
@@ -21,21 +21,9 @@ export const PerfumeConfig = {
         ColorSwitchComponent,
         ColorFactoryComponent,
         ColorsComponent,
-        ThistleComponent,
-        LollipopComponent,
-        FloralComponent,
-        FuchsiaComponent,
-        LawnComponent,
-        RubyComponent,
-        BubblegumComponent,
+        MauveComponent,
+        OlympicComponent,
         CarnationComponent,
-        HoneydewComponent,
-        MindaroComponent,
-        PistachioComponent,
-        YellowComponent,
-        CreamComponent,
-        BananaComponent,
-        TromboneComponent,
         ColorFactoryWrapperComponent
     ],
     imports: [
