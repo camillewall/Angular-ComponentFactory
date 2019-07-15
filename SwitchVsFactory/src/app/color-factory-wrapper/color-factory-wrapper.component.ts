@@ -9,7 +9,7 @@ import { ColorsComponent, ThistleComponent, LollipopComponent, FuchsiaComponent,
 })
 export class ColorFactoryWrapperComponent implements OnChanges, OnDestroy, OnInit {
 
-    @ViewChild('target', { read: ViewContainerRef }) target: ViewContainerRef;
+    @ViewChild('target', { read: ViewContainerRef, static: true }) target: ViewContainerRef;
     @Input() type: string;
     @Input() index: number;
     cmpRef: ComponentRef<ColorBox>;

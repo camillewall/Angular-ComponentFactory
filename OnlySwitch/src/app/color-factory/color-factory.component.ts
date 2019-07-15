@@ -1,21 +1,23 @@
-import { Component, OnInit, AfterViewInit } from '@angular/core';
-import { PerfumeAfterViewInit} from 'perfume.js/angular';
+import { AfterViewInit, Component, OnInit } from '@angular/core';
+import { NgPerfume } from 'perfume.js/angular';
 
 @Component({
     selector: 'app-color-factory',
     templateUrl: './color-factory.component.html',
     styleUrls: ['./color-factory.component.scss']
 })
-@PerfumeAfterViewInit('ColorFactoryComponent')
+// @PerfumeAfterViewInit('ColorFactoryComponent')
 export class ColorFactoryComponent implements OnInit, AfterViewInit {
 
-    constructor() { }
+    constructor(public perfume: NgPerfume) {
+        this.perfume.start('ColorFactoryComponentAfterPaint');
+    }
 
     ngOnInit() {
     }
 
     ngAfterViewInit() {
-
+        this.perfume.endPaint('ColorFactoryComponentAfterPaint');
     }
 
 }
