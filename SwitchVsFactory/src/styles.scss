@@ -1,5 +1,11 @@
 /* You can add global styles to this file, and also import other style files */
 
+body {
+    font-family: Arial;
+    font-size: 1rem;
+    background-color: #fff;
+}
+
 .colors {
     display: flex;
     flex-wrap: wrap;

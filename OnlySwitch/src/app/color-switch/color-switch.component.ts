@@ -15,14 +15,14 @@ export class ColorSwitchComponent implements OnInit, AfterViewInit {
 
     constructor(private colors: MyColorsService, public perfume: NgPerfume) {
         this.displayColors = this.colors.displayColors;
-        this.perfume.start('ColorSwitchComponentAfterPaint');
+        this.perfume.start('SwitchComponentAfterPaint');
     }
 
     ngOnInit() {
     }
 
     ngAfterViewInit() {
-        this.perfume.endPaint('ColorSwitchComponentAfterPaint');
+        this.perfume.endPaint('SwitchComponentAfterPaint');
     }
 
 }

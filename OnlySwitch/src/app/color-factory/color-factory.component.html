@@ -1,3 +1,7 @@
-<p>
-    color-factory works!
-</p>
+<h3>Factory</h3>
+<div class="colors">
+    <div *ngFor="let color of displayColors; let i = index">        
+        <app-color-factory-wrapper [type]="color" [index]="i">
+        </app-color-factory-wrapper>
+    </div>
+</div>

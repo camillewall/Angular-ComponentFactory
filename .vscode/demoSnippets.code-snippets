@@ -2,87 +2,30 @@
 	"Add entryComponents": {
 		"scope": "javascript,typescript",
 		"prefix": "addEntry",
-		"body": [
-			"entryComponents: [",
+		"body": [			
 			"    ColorsComponent,",
 			"    MauveComponent,",
 			"    OlympicComponent,",
-			"    CarnationComponent",			
-			"],"
+			"    CarnationComponent"			
 		],
 		"description": "Add entryComponents"
-	},
-	"factory html": {
-		"prefix": "facthtml",
-		"body": [
-			"<h3>Factory</h3>",
-			"<div class=\"colors\">",
-			"    <div *ngFor=\"let color of displayColors; let i = index\">",
-			"        <!-- {{color}} -->",
-			"        <app-color-factory-wrapper [type]=\"color\" [index]=\"i\">",
-			"        </app-color-factory-wrapper>",
-			"    </div>",
-			"</div>"
-		],
-		"description": "factory html"
-	},
-	"color service": {
-		"prefix": "colorService",
-		"body": "private colors: MyColorsService,",
-		"description": "Add color service"
-	},
+	},	
 	"resolver service": {
 		"prefix": "resolverService",
 		"body": "private componentFactoryResolver: ComponentFactoryResolver",
 		"description": "componentFactoryResolver service"
-	},
-	"display color array": {
-		"prefix": "colorArray",
-		"body": "displayColors: string[];",
-		"description": "display color array"
-	},
-	"wrapper target div": {
-		"prefix": "wrapperDiv",
-		"body": "<div #target></div>",
-		"description": "wrapper target div"
-	},
+	},	
 	"wrapper variables": {
 		"prefix": "wrapperVars",
 		"body": [
-			"@ViewChild('target', { read: ViewContainerRef }) target: ViewContainerRef;",
+			"@ViewChild('target', { read: ViewContainerRef, static: true }) target: ViewContainerRef;",
 			"@Input() type: string;",
 			"@Input() index: number;",
 			"cmpRef: ComponentRef<ColorBox>;",
 			"private isViewInitialized: boolean = false;"
 		],
 		"description": "wrapper variables"
-	},
-	"wrapper onInit": {
-		"prefix": "wrapperInit",
-		"body": [
-			"this.isViewInitialized = true;",
-			"this.updateComponent();"
-		],
-		"description": "wrapper onInit"
-	},
-	"wrapper update component": {
-		"prefix": "wrapperUpdate",
-		"body": [
-			"updateComponent() {",
-			"        if (!this.isViewInitialized) {",
-			"            return;",
-			"        }",
-			"        if (this.cmpRef) {",
-			"            // when the `type` input changes we destroy a previously ",
-			"            // created component before creating the new one",
-			"            this.cmpRef.destroy();",
-			"        }",
-			"    ",
-			"",
-			"}"
-		],
-		"description": "wrapper update component"
-	},
+	},		
 	"wrapper update switch": {
 		"prefix": "wrapperSwitch",
 		"body": [
@@ -104,27 +47,24 @@
 		"prefix": "wrapperFactory",
 		"body": [
 			"// make a factory with the correct component type",
-			"let factory = this.componentFactoryResolver.resolveComponentFactory(componentType);",
-			"// create the component and assign to target div element",
-			"this.cmpRef = this.target.createComponent(factory)",
-			"// to access the created instance use",
-			"this.cmpRef.instance.index = this.index;"
+			"let factory = this.componentFactoryResolver.resolveComponentFactory(componentType);"			
 		],
 		"description": "wrapper update factory"
-	},
-	"wrapper on something": {
-		"prefix": "wrapperOn",
-		"body": [
-			"ngOnChanges() {",
-			"    this.updateComponent();",
-			"}",
-			"",
-			"ngOnDestroy() {",
-			"    if (this.cmpRef) {",
-			"        this.cmpRef.destroy();",
-			"    }",
-			"}"
-		],
-		"description": "wrapper on something"
-	}
+    },
+    "assignFactory": {
+        "prefix": "assignFactory",
+        "body": [
+            "// create the component and assign to target div element",
+			"this.cmpRef = this.target.createComponent(factory)"
+        ],
+        "description": "assign the factory to the view child target"
+    },
+    "indexInput":{
+        "prefix": "indexInput",
+        "body": [
+            "// to access the created instance use",
+			"this.cmpRef.instance.index = this.index;"
+        ],
+        "description": "set the index value"
+    }
 }
